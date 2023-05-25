@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #quiz {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .submit-btn {
+      display: block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quiz Website</h1>
+  <div id="quiz">
+    <div class="question">
+      <h2>Question 1:</h2>
+      <p>What is the capital of France?</p>
+      <div class="options">
+        <label>
+          <input type="radio" name="q1" value="a">
+          a) Paris
+        </label>
+        <label>
+          <input type="radio" name="q1" value="b">
+          b) London
+        </label>
+        <label>
+          <input type="radio" name="q1" value="c">
+          c) Rome
+        </label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h2>Question 2:</h2>
+      <p>Which planet is known as the Red Planet?</p>
+      <div class="options">
+        <label>
+          <input type="radio" name="q2" value="a">
+          a) Venus
+        </label>
+        <label>
+          <input type="radio" name="q2" value="b">
+          b) Mars
+        </label>
+        <label>
+          <input type="radio" name="q2" value="c">
+          c) Jupiter
+        </label>
+      </div>
+    </div>
+
+    <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      var score = 0;
+
+      // Get the selected answers
+      var q1Answer = document.querySelector('input[name="q1"]:checked').value;
+      var q2Answer = document.querySelector('input[name="q2"]:checked').value;
+
+      // Check the answers
+      if (q1Answer === "a") {
+        score += 1;
+      }
+
+      if (q2Answer === "b") {
+        score += 1;
+      }
+
+      // Display the result
+      alert("Your score is: " + score + "/2");
+    }
+  </script>
+</body>
+</html>
